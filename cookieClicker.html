@@ -33,7 +33,31 @@
   <div id="message">Start clicking to earn cookies!</div>
 
   <script>
-    // We'll add JavaScript here next
+    const cookieBtn = document.getElementById("cookieBtn");
+const counterDisplay = document.getElementById("counter");
+const messageDisplay = document.getElementById("message");
+
+let count = 0;
+
+cookieBtn.addEventListener("click", function() {
+  count++;
+  counterDisplay.textContent = "Clicks: " + count;
+
+  if (count === 10) {
+    messageDisplay.textContent = "You’re just getting started! 🍪";
+    document.body.style.backgroundColor = "#e0f7fa";
+  } else if (count === 25) {
+    messageDisplay.textContent = "Wow, that’s a lot of cookies! 😲";
+    document.body.style.backgroundColor = "#fff3e0";
+  } else if (count === 50) {
+    messageDisplay.textContent = "Are you still clicking? 😂";
+    document.body.style.backgroundColor = "#fce4ec";
+  } else if (count === 100) {
+    messageDisplay.textContent = "🎉 You win! Maybe take a break.";
+    document.body.style.backgroundColor = "#dcedc8";
+  }
+});
+
   </script>
 </body>
 </html>
